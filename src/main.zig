@@ -1,9 +1,9 @@
 const std = @import("std");
 const print = std.debug.print;
-const unicode = @import("unicode.zig");
+const analyze = @import("analyze-colors.zig");
 
 pub fn main() !void {
     print("Hell o'World\n\n", .{});
 
-    try unicode.PrintUnicode();
+    try analyze.analyzeJson();
 }
