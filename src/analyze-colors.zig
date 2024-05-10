@@ -72,9 +72,11 @@ pub fn analyzeJson() !void {
 
     var map_iterator = map.iterator();
 
+    print("[\n", .{});
     while (map_iterator.next()) |entry| {
-        print("\"color\": \"{s}\"; \"qtt\": \"{d}\"\n", .{ entry.value_ptr.code, entry.value_ptr.qtt });
+        print("{{\"color\": \"{s}\", \"qtt\": \"{d}\"}},\n", .{ entry.value_ptr.code, entry.value_ptr.qtt });
     }
+    print("]", .{});
 
     print("\nTOTAL COLORS FOUND: {d}\n", .{total_colors});
     return;
